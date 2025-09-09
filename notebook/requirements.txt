@@ -1,4 +1,3 @@
-psycopg2-binary
 
 redis
 py2
@@ -20,3 +19,5 @@ pandasql
 pydotplus
 
 graphviz
+
+psycopg2-binary

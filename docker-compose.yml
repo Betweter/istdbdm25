@@ -16,7 +16,7 @@ services:
     container_name: pgadmin4_container
     restart: always
     ports:
-      - "8888:80"
+      - "8080:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: postgres@insa-lyon.fr
       PGADMIN_DEFAULT_PASSWORD: postgres
@@ -30,8 +30,7 @@ services:
       ports:
         - 8888:8888
       volumes:
-        - ./database/:/home/jovyan/work/database
-        - ./datamining/:/home/jovyan/work/datamining
+        - ./:/home/jovyan/work/
       environment:
         - GRANT_SUDO=yes
 volumes:
