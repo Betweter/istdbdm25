@@ -23,6 +23,7 @@
   - port: 5432
   - password: postgres
 
+- if anything happens to your containers during the practice, just run ```docker compose up -d``` again.
 
 ## Use GitHub Codespaces
 
