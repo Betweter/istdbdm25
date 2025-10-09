@@ -65,27 +65,35 @@ Simply clone the repository and run
 The following docker compose file will build the notebook container which includes all the required dependencies.
 Services are also exposed to the host network so you can connect to the via localhost
 
+### WSL Users
 
-- [Open Jupyter](http://127.0.0.1:8888/)
+## For Windows Users users
 
+1) Change operating systems
 
-```yaml
-version: "3"
+2) if you cannot do that
+3) create a file .wslconfig in the folder /Users/<UserProfile>
+4) copy the following content in it
+```
+[wsl2]
+# Cap the total RAM WSL2 can use across all distros.
+# On an 8 GB machine, 4 GB is a safe ceiling for Docker work.
+memory=4GB
 
-services:
-  postgres:
-    image: postgres
-    restart: always
-    ports:
-        - 5432:5432
-    environment:
-      - POSTGRES_HOST_AUTH_METHOD=trust
-  notebook:
-    build: notebook/
-    ports:
-      - 8888:8888
-    volumes:
-       - ./:/home/jovyan/work/data
-    environment:
-      - GRANT_SUDO=yes
-```     
+# Limit vCPUs WSL2 can use (optional).
+# If you have a 4-core/8-thread CPU, 4 here is reasonable.
+processors=4
+
+# Provide swap space for memory spikes (Docker builds, etc.).
+# Keep this modest on an 8 GB host.
+swap=4GB
+
+# Optional: store the swap file somewhere with enough free space.
+# Comment this out to use the default location.
+# swapfile=C:\\wsl-swap.vhdx
+
+# Keep localhost port forwarding (Windows <-> Linux) enabled.
+localhostForwarding=true
+
+```
+5) reboot docker
