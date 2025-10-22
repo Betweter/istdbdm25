@@ -12,7 +12,8 @@
 - Create a new codespace
 - run first ```docker compose build```
 - in a new terminal, run ```docker compose pull``
-- when both have terminated, run in either of the terminals, ```docker compose up -d```
+- when both have terminated, run in either of the terminals, ```docker compose up```
+  - do not use '-d' option, so that the codespace remains active due to the activity in the terminal.
 - once run, you will see 3 links opening under the PORTS tab in visual studio
   - one on port 5432, one on 8080, and one in 8888
 
