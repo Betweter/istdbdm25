@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Restaurant DB Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Restaurant Database Project Demo</h1>
+
+  <button id="loadData">Load Data</button>
+  <span id="loadStatus"></span>
+
+  <h2>Preset Queries</h2>
+  <div id="buttons">
+    <button class="query-btn" data-query="favoriteDishMale">Favorite dish for males</button>
+    <button class="query-btn" data-query="mostSeniorsCity">City with most seniors (65+)</button>
+    <button class="query-btn" data-query="mostPopularLA">Most popular franchise in Louisiana</button>
+    <button class="query-btn" data-query="maxSpendDay">Customer max spend in a day</button>
+    <button class="query-btn" data-query="diffFavorites">Restaurants w/ different employee/customer favorites</button>
+    <button class="query-btn" data-query="busyRestaurants">Restaurants w/ most customers per month</button>
+  </div>
+
+  <h2>Run Custom SQL</h2>
+  <textarea id="sqlBox" rows="6" cols="90">SELECT * FROM restaurants LIMIT 5;</textarea>
+  <br />
+  <button id="runSQL">Run SQL</button>
+
+  <h2>Results</h2>
+  <pre id="output"></pre>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
